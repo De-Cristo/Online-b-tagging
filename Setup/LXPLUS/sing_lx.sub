@@ -1,0 +1,12 @@
+executable              = run_deepjetcore3_lxplus.sh
+arguments               = $(ClusterId)$(ProcId)
+output                  = out/sing_lx.$(ClusterId).$(ProcId).out
+error                   = out/sing_lx.$(ClusterId).$(ProcId).err
+log                     = out/sing_lx.$(ClusterId).log
+should_transfer_files   = YES
+when_to_transfer_output = ON_EXIT
+#request_GPUs = 2
+request_CPUs = 2
++JobFlavour = "workday"
+#+SingularityImage = "/cvmfs/unpacked.cern.ch/registry.hub.docker.com/library/centos:centos7"
+queue
